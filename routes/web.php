@@ -54,17 +54,13 @@ Route::get('/waitinglist','front@managewaiting');
 Route::get('/confirm', function () {
     return view('confirmreq');
 });
-Route::get('/confirmlist','front@confirmrequest');
 
 Route::get('/confirm/{Empno}','front@doconfirm');
 Route::get('/douserconfirm/{Empno}','front@douserconfirm');
 
 Route::post('/payinfo','front@payment');
-Route::get('/payment', function () {
-    return view('payment');
-});
 
-Route::get('/confirmuser','front@confirmuser');
+
 
 
 Route::get('/index', function () {
@@ -73,3 +69,16 @@ Route::get('/index', function () {
 
  Route::post('/date','UserController@checkdate');
  Route::get('/notbook','UserController@checkdate');
+
+
+ //Admin Panel Routes
+ Route::get('/adminIndex', function () {
+    return view('adminIndex');
+});
+
+Route::get('/managerooms', function () {
+    return view('manageroom');
+});
+
+Route::get('/confirmuser','front@confirmuser');
+Route::get('/confirmlist','front@confirmrequest');

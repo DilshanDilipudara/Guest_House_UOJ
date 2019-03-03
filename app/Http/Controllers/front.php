@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\bookinginfo;
 use App\user;
 use App\aaa;
-use DB;
+use Auth;
 
+use DB;
+ 
 class front extends Controller
 {
             public function managewaiting(){
@@ -22,7 +25,7 @@ class front extends Controller
                 //$data = DB::table('bookinginfos')->where('Cleval',!3)->get();
 
                 //$data = bookinginfo::table('Empno')->get();
-            Return view('waitinglist',['user'=>$data]);
+            Return view('adminIndex',['user'=>$data]);
         }
 
 
@@ -40,9 +43,7 @@ class front extends Controller
             ->join('users','users.Empno','=','bookinginfos.Empno')
             ->where('Empno',!3)
             ->get();
-        //$data=array('name'=>$name);
-        //DB::table('aaas')->insert($data);
-        //return redirect()->back();
+        
         }
 
         public function confirmrequest(){
@@ -54,10 +55,8 @@ class front extends Controller
             ->where('Cleval',!3)
             ->get();
 
-            //$data = DB::table('bookinginfos')->where('Cleval',!3)->get();
-
-            //$data = bookinginfo::table('Empno')->get();
-        Return view('confirmreq',['user'=>$data]);
+    
+        Return view('adminIndex',['user'=>$data]);
         }
 
         public function doconfirm($Empno){
@@ -66,7 +65,7 @@ class front extends Controller
                     ->where('Empno', $Empno )
                     ->update(['Cleval' => 3]);
                     return redirect()->back();
-        //dd($data->all());
+        
         }
 
         public function payment(Request $request){
@@ -79,12 +78,9 @@ class front extends Controller
                     ->update(['Abill' =>$now-$amount]);
                     return redirect()->back();
 
-        // $data = DB::table('bookinginfos')->where('Cleval',!3)->get();
+        
+        Return view('payments',['user'=>$data]);
 
-            //$data = bookinginfo::table('Empno')->get();
-        Return view('paymentinfo',['user'=>$data]);
-
-        //dd($name->all());
 
         }
 
@@ -96,10 +92,8 @@ class front extends Controller
             ->where('Crts',0)
             ->get();
 
-            //$data = DB::table('bookinginfos')->where('Cleval',!3)->get();
-
-            //$data = bookinginfo::table('Empno')->get();
-        Return view('confirmuser',['user'=>$data]);
+            
+        Return view('adduser',['user'=>$data]);
         }
 
         public function douserconfirm($Empno){
@@ -110,6 +104,7 @@ class front extends Controller
                     return redirect()->back();
         //dd($data->all());
         }
+
  
    
 }
