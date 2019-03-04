@@ -16,7 +16,7 @@
  
  ->Add Project 
  
-           git clone
+           git clone https://github.com/DilshanDilipudara/Guest_House_UOJ.git
            
          
          
