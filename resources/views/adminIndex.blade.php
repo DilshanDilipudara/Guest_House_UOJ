@@ -48,9 +48,9 @@
                     Admin Panel
                 </a>
             </div>
-            <?php include '/home/vampire/Desktop/BookingBackend/Guest_House_UOJ/resources/views/includes/navbar.php'?>
+          
+		     <!-----include nav Bar ---------->
             
-
             
     	</div>
     </div>
@@ -121,7 +121,7 @@
 			</tr>
      @endforeach
 	 </table >
-	 </br>
+	 <br>
 	 <td> <a href="index" class="btn btn-primary">Home</a>
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
