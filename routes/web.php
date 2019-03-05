@@ -82,3 +82,4 @@ Route::get('/managerooms', function () {
 
 Route::get('/confirmuser','front@confirmuser');
 Route::get('/confirmlist','front@confirmrequest');
+Route::get('send','mailController@send');
