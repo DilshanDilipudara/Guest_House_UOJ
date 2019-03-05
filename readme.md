@@ -17,12 +17,16 @@
  ->Add Project 
  
              git clone https://github.com/DilshanDilipudara/Guest_House_UOJ.git
+            
+  -> Add database
+           Use the database provided with the git file. Create a database in localhost/phpmyadmin with the same name. \
+           Then import the cloned database into the project.
            
          
          
                              
                              
-                             
+                             oort
                              
                              ->----------UoJ Guest House-------------<-
       
