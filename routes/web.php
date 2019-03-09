@@ -63,12 +63,8 @@ Route::post('/payinfo','front@payment');
 
 
 
-Route::get('/index', function () {
-    return view('index');
-});
-
  Route::post('/date','UserController@checkdate');
- Route::get('/notbook','UserController@checkdate');
+ Route::get('/index','UserController@checkdate');
 
 
  //Admin Panel Routes

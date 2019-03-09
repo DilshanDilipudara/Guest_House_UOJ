@@ -69,6 +69,7 @@
   
     <div class="container ">
        <div class="block-32 bg-dark border border-info">
+     
               <form action="/date" method="POST" >
               {{csrf_field()}}
                 <div class="row">
@@ -95,8 +96,19 @@
             </div>
       </div>
 
-    <div class="site-section block-13 bg-light">
-      <div class="container">
+      @if(count($errors)>0)
+          <ul>
+            @foreach($errors->all() as $error)
+            <div class="container alert alert-danger">{{$error}}</div>
+            @endforeach
+          </ul>
+          @endif
+
+
+      @php ($b[] = 0) 
+          @if(count($b)>0)
+          <div class="site-section block-13 bg-light">
+         <div class="container">
          <div class="row mb-5">
             <div class="col-md-7 section-heading">
               <span class="subheading-sm">Featured Rooms</span>
@@ -108,7 +120,7 @@
            <div class="row">
             <div class="col-md-12">
               <div class="nonloop-block-13 owl-carousel">
-                
+                @foreach($b as $room)
                  <div class="item">
                     
                     <div class="block-34">
@@ -119,7 +131,7 @@
                         <h2 class="heading"></h2>
                         <div class="price"><sup>Rs</sup><span class="number">5000</span><sub>/per night</sub></div>
                         <ul class="specs">
-                        <li><strong>Room Number:</strong></li>
+                        <li><strong>Room Number:{{$room}}</strong></li>
                           <li><strong>Description:</strong></li>
                           <li><strong>Facilities:</strong> Closet with hangers, HD flat-screen TV, Telephone</li>
                           <li><strong>Size:</strong> 20m<sup>2</sup></li>
@@ -130,12 +142,13 @@
                     </div>
                     
                   </div>               
-            
+            @endforeach 
               </div>
             </div> 
           </div>
       </div>
     </div>
+  @endif
 
    
   <footer class="footer">

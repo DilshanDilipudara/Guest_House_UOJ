@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use DB;
 use App\User;
 use Auth;
@@ -39,16 +40,18 @@ class UserController extends Controller
 
    public function checkdate(Request $request){
 
-        $datein=$request->input('startdate');
-       
+   $this->validate($request,[
+           'startdate' => 'required|date|after:today',
+             'enddate' => 'required|date|',
+   ]);
+
+    
+       $datein=$request->input('startdate');   
         $dateend=$request->input('enddate');
 
-
-      $q=DB::table('rooms')
+        $q=DB::table('rooms')
             ->select('Roomid')
             ->get();
-
-            
 
         $a=DB::table('bookinginfos')
             ->where('Strd','<=',$datein)
@@ -86,7 +89,7 @@ class UserController extends Controller
             $count = 0;
             
         }
-        return view('notbook',compact('b'));
+        return view('index',compact('b'));
    }
 
 

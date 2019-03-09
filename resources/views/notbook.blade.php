@@ -64,6 +64,13 @@
 
     </div>
   </div>
+
+
+
+   
+
+
+
   
     <div class="container ">
        <div class="block-32 bg-dark border border-info">
@@ -92,6 +99,18 @@
               </form>
             </div>
       </div>
+      
+      &nbsp
+          
+      @if(count($errors)>0)
+      <ul>
+        @foreach($errors->all() as $error)
+        <li class="alert alert-danger">{{$error}}</li>
+        @endforeach
+      </ul>
+      @endif
+
+
 
     <div class="site-section block-13 bg-light">
       <div class="container">
