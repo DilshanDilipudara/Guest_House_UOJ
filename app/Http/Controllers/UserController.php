@@ -88,10 +88,6 @@ class UserController extends Controller
         }
         return view('notbook',compact('b'));
    }
-  
-   
-
-
 
 
 
