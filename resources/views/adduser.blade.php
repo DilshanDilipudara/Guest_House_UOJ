@@ -150,7 +150,7 @@
      @endforeach
 	 </table >
 	 </br>
-	 <td> <a href="home" class="btn btn-primary">Home</a>
+	 <td> <a href="/home" class="btn btn-primary">Home</a>
 
 	 <script>
 $(document).ready(function(){

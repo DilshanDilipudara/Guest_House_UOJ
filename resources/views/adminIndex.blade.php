@@ -139,7 +139,7 @@
      @endforeach
 	 </table >
 	 <br>
-	 <td> <a href="index" class="btn btn-primary">Home</a>
+	 <td> <a href="/home" class="btn btn-primary">Home</a>
 
 
 	 <script>
