@@ -55,7 +55,7 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-8">
-              <h2 class="heading">A Luxury Experience</h2>
+              <h2 class="heading">A Luxuryyyy Experience</h2>
 
             </div>
           </div>
@@ -108,8 +108,22 @@
         <li class="alert alert-danger">{{$error}}</li>
         @endforeach
       </ul>
-      @endif
 
+      @endif
+        <div class="form-popup" id="myForm">
+          <form action="/action_page.php" class="form-container">
+            <h1>Login</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Login</button>
+            <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
+        </div>
 
 
     <div class="site-section block-13 bg-light">
@@ -142,7 +156,7 @@
                           <li><strong>Size:</strong> 20m<sup>2</sup></li>
                           <li><strong>Bed Type:</strong> One bed</li>
                         </ul>
-                        <button class="btn btn-primary" type="button">Book Now</button>
+                        <button class="btn btn-primary" onclick="openForm()" type="button">Book Now</button>
                       </div>
                     </div>
                     
@@ -245,3 +259,14 @@
   <script src="js/main.js"></script>
   </body>
 </html>
+
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
