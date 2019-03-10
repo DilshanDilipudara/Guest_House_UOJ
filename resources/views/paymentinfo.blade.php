@@ -50,8 +50,14 @@
             </div>
 
             
-            <?php include '..\resources\views\includes\navbar.php'?>
-            
+						<?php 
+							try {
+								include '../resources/views/includes/navbar.php';
+							}
+							catch (exception $e) {
+								include '..\resources\views\includes\navbar.php';
+							}
+						?>     
         
         
     	</div>
