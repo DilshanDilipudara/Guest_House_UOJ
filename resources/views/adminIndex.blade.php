@@ -44,14 +44,13 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="adminIndex.php" class="simple-text">
+                <a href="confirmlist" class="simple-text">
                     Admin Panel
                 </a>
             </div>
           
 		     <!-----include nav Bar ---------->
-			 <?php include '/home/user/Desktop/Guest_House_UOJ/resources/views/includes/navbar.php'?>
-            
+			 <?php include '..\resources\views\includes\navbar.php'?>
             
     	</div>
     </div>
@@ -84,7 +83,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->http://localhost:8000/adduser
+<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -102,6 +101,13 @@
 <body>
 
 	<div class="container">
+
+
+	</br>
+	<div class="container mt-3">
+	<input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br></br>
+    </div>
 <table class="table  table-bordered ">
 	<h1><th>Employee name</th>
 	 <th>Type</th>
@@ -109,6 +115,7 @@
 	 <th>Start Date</th>
 	 <th>End date</th></h1>
 	 <th>Action</th></h1>
+	 <tbody id="myTable">
 	 @foreach($user as $user1)
 			<tr> 
 			<td> {{$user1->Uname}}</td>
@@ -124,6 +131,27 @@
 	 </table >
 	 <br>
 	 <td> <a href="index" class="btn btn-primary">Home</a>
+
+
+	 <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

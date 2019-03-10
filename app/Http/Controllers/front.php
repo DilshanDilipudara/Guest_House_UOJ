@@ -46,6 +46,9 @@ class front extends Controller
         
         }
 
+
+
+         //room confirm part
         public function confirmrequest(){
 
             $data=   DB::table('bookinginfos')
@@ -53,9 +56,7 @@ class front extends Controller
                     'bookinginfos.Strd','bookinginfos.Endd','bookinginfos.Empno')
             ->join('users','users.Empno','=','bookinginfos.Empno')
             ->where('Cleval',!3)
-            ->get();
-
-    
+            ->get();  
         Return view('adminIndex',['user'=>$data]);
         }
 
@@ -68,21 +69,48 @@ class front extends Controller
         
         }
 
-        public function payment(Request $request){
-            $amount=$request->input('/payinfo');
-            $name=Auth::user()->Empno;
-            $now=Auth::user()->Abill;
+     
 
-            DB::table('users')
-                    ->where('Empno', $name )
-                    ->update(['Abill' =>$now-$amount]);
-                    return redirect()->back();
 
-        
-        Return view('payments',['user'=>$data]);
+        //payment information part
 
+        public function paymentinfo()
+        {
+            $data=   DB::table('users')
+            ->select('Uname','Empno','Abill')
+            ->get();
+
+            //$data = DB::table('bookinginfos')->where('Cleval',!3)->get();
+           //,['user'=>$data]
+            //$data = bookinginfo::table('Empno')->get();
+        Return view('paymentinfo',['user'=>$data]);
 
         }
+
+        
+public function dopay(Request $request){
+    $amount=$request->input('/payinfo');
+    $emp=$request->input('Empno');
+    $now=$request->input('cur');
+    
+ 
+    DB::table('users')
+            ->where('Empno', $emp )
+            ->update(['Abill' =>$now-$amount]);
+            return redirect()->back();
+           
+
+   // $data = DB::table('bookinginfos')->where('Cleval',!3)->get();
+
+    //$data = bookinginfo::table('Empno')->get();
+//Return view('home');
+
+}
+
+
+
+
+// add user part
 
         public function confirmuser(){
 

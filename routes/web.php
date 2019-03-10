@@ -58,9 +58,11 @@ Route::get('/confirm', function () {
 Route::get('/confirm/{Empno}','front@doconfirm');
 Route::get('/douserconfirm/{Empno}','front@douserconfirm');
 
-Route::post('/payinfo','front@payment');
+//Route::post('/payinfo','front@payment');
 
-
+Route::get('/paymentinfo','front@paymentinfo');
+//Route::get('/paybillinfo/{Empno}','front@paybillinfo');
+Route::post('/dopay','front@dopay');
 
 
  Route::post('/date','UserController@checkdate');

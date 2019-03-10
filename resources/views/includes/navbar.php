@@ -12,7 +12,7 @@
         </a>
     </li>
     <li>
-        <a href="#">
+        <a href='/paymentinfo'>
             <i class="ti-money "></i>
             <p>Payments</p>
         </a>
