@@ -71,7 +71,7 @@
                     Admin Panel
                 </a>
             </div>
-            <?php include '..\resources\views\includes\navbar.php'?>
+            <?php include '../resources/views/includes/navbar.php'?>
             
 
             

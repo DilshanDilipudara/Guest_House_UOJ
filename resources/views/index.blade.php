@@ -54,6 +54,7 @@
 
     <div class="owl-carousel loop-block-31 ">
       <div class="block-30 item" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+       
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-8">
@@ -66,6 +67,7 @@
 
     </div>
   </div>
+  
   
     <div class="container ">
        <div class="block-32 bg-dark border border-info">

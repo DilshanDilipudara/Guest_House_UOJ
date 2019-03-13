@@ -48,7 +48,7 @@
                     Admin Panel
                 </a>
             </div>
-            <?php include '/home/vampire/Desktop/BookingBackend/Guest_House_UOJ/resources/views/includes/navbar.php'?>
+            <?php include '../resources/views/includes/navbar.php'?>
             
 
             
