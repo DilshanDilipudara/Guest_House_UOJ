@@ -346,7 +346,7 @@
 
               <!-- Accordion card -->
              
-              <form>
+              <form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
                 <div class="col-md-6">
                     <div class="form-group">
                         <input type="text" value="{{Auth::user()->Uname}}" placeholder="Name of the Applicant" class="form-control">
@@ -372,7 +372,7 @@
                         <input type="text" value="" placeholder="Input" class="form-control">
                     </div>
                 </div>
-            </form>
+           
                
               
             </div>
@@ -405,12 +405,18 @@
               </div>
               <div class="text-center">
 
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                <button class="btn btn-success">Confirm
-                  <i class="fas fa-cart-plus ml-2" aria-hidden="true"></i>
-                </button>
+                
+              <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the Terms and Conditions and Privacy Policy
+            
+            
+             
+             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+              
+             <input type="submit" name="submit" value="submit" />
+            </form>
               </div>
             </div>
+            
             <!-- /.Add to Cart -->
           </div>
         </div>
