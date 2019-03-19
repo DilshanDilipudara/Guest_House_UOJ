@@ -204,7 +204,7 @@
                       </div>
                       <div class="text">
                         <h2 class="heading"></h2>
-                        <div class="price"><sup>Rs</sup><span class="number">5000</span><sub>/per night</sub></div>
+                        <div class="price"><sup>Rs</sup><span class="number">{{$room}}</span><sub>/per night</sub></div>
                         <ul class="specs">
                         <li><strong>Room Number:{{$room}}</strong></li>
                           <li><strong>Description:</strong></li>
@@ -335,56 +335,46 @@
       <div class="modal-body">
         <div class="row">
           <div class="col-lg-1"></div>
-          <div class="col-lg-10">
+        
+        
             <h2 class="h2">
               <strong>Please Fill out the Booking Requeset Form.</strong>
             </h2>
            
 
-            <!--Accordion wrapper-->
-            <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
-
-              <!-- Accordion card -->
-             
-              <form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
-                <div class="col-md-6">
+          
+                
+              <form action="/" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+                <div class="col-md-10">
                     <div class="form-group">
                         <input type="text" value="{{Auth::user()->Uname}}" placeholder="Name of the Applicant" class="form-control">
                     </div>
+                    
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-10">
                     <div class="form-group">
                         <input type="text" value="{{Auth::user()->Position}}" placeholder="Position" class="form-control">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-10">
                     <div class="form-group">
                         <input type="text" value="{{Auth::user()->Department}}" placeholder="Department" class="form-control">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-10">
                     <div class="form-group">
-                        <input type="text" value="" placeholder="{{Auth::user()->Pno}}" class="form-control">
+                        <input type="text" value="{{Auth::user()->Pno}}" placeholder="" class="form-control">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-10">
                     <div class="form-group">
-                        <input type="text" value="" placeholder="Input" class="form-control">
+                        <input type="text" value="{{Auth::user()->Pno}}" placeholder="" class="form-control">
                     </div>
                 </div>
-           
-               
-              
-            </div>
-            <!-- Accordion wrapper -->
 
-
-            <!-- Add to Cart -->
-         <div class="card-body">
-              <div class="row">
                 <div class="col-md-6">
-
-                  <select class="md-form mdb-select colorful-select dropdown-primary">
+                    <div class="form-group">
+                  <select>
                     <option value="" disabled selected>Choose Location</option>
                     <option value="1">Guest House Colombo</option>
                     <option value="2">Guest House Jaffna</option>
@@ -393,27 +383,39 @@
 
                   </select>
 
+                    </div>
                 </div>
-                <div class="col-md-6">
-
-
-                </div>
-                <div class="col-md-6">
-
-
-                </div>
-              </div>
-              <div class="text-center">
-
                 
-              <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the Terms and Conditions and Privacy Policy
-            
-            
-             
-             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                <div class="col-md-4">
+                <label class="radio-inline"><input type="radio" name="optradio" checked>Guets Invited By University</label>
+                <label class="radio-inline"><input type="radio" name="optradio">Visiting Staff</label>
+                <label class="radio-inline"><input type="radio" name="optradio">University Staff</label>
+                <label class="radio-inline"><input type="radio" name="optradio">Private - Single</label>
+                <label class="radio-inline"><input type="radio" name="optradio">Official Duty Staff</label>
+                      
+                </div>             
+                    
+                
+                
+                  
+                    <div class="text-center">
+                    
+
+                      
+                    <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the <a href="">Terms and Conditions</a> and Privacy Policy
+
+                    <br>
+                  
+                  
+                  
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary" data-dismiss="modal">Submit</button>
+
               
-             <input type="submit" name="submit" value="submit" />
-            </form>
+              </form>
+             
+
               </div>
             </div>
             
