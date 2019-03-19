@@ -437,5 +437,4 @@ function closeForm() {
 $(document).ready(function() {
 $('.mdb-select').materialSelect();
 });
-</script>
-
+</scrip>
