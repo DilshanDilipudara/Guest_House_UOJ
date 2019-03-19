@@ -133,6 +133,27 @@ public function dopay(Request $request){
         //dd($data->all());
         }
 
+
+        //Booking
+
+        public function bookThis(Request $request){
+
+            // $amount=$request->input('/payinfo');
+            // $emp=$request->input('Empno');
+            // $now=$request->input('cur');
+
+            
+            
+         
+            DB::table('users')
+                    ->where('Empno', $emp )
+                    ->update(['Abill' =>$now-$amount]);
+                    return redirect()->back();
+                   
+        }
+        
+       
+
  
    
 }

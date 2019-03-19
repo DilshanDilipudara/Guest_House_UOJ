@@ -71,8 +71,20 @@
                     Admin Panel
                 </a>
             </div>
+<<<<<<< HEAD
             <?php include '../resources/views/includes/navbar.php'?>
             
+=======
+ 
+						<?php 
+							try {
+								include '../resources/views/includes/navbar.php';
+							}
+							catch (exception $e) {
+								include '..\resources\views\includes\navbar.php';
+							}
+						?>               
+>>>>>>> 7e0183c9f566d4d13a406f587c53fcd26db6b7a9
 
             
     	</div>
@@ -143,7 +155,7 @@
      @endforeach
 	 </table >
 	 </br>
-	 <td> <a href="home" class="btn btn-primary">Home</a>
+	 <td> <a href="/home" class="btn btn-primary">Home</a>
 
 	 <script>
 $(document).ready(function(){
