@@ -131,13 +131,20 @@
 
 
 	<div class="container">
+	<input name="admin" type="checkbox" value="1">
+	
 <table class="table  table-bordered ">
+
+
+
+
 	<h1><th>Employee number</th>
 	 <th>Name</th>
 	 <th>Gender</th>
 	 <th>Faculty</th>
 	 <th>Department</th>
 	 <th>Position</th></h1>
+	 <th>Action</th></h1>
 	 <th>Action</th></h1>
 	 <tbody id="myTable">
 	 @foreach($user as $user1)
@@ -148,6 +155,9 @@
 			<td> {{$user1->faculty}}</td>
 			<td> {{$user1->Department}}</td>
 			<td> {{$user1->Position}}</td>
+
+
+			
 			<td> <a href="/douserconfirm/{{$user1->Empno}}" class="btn btn-primary">
 			<i class="fas fa-user-check"></i>Confirm</a>
 			</td>
@@ -157,6 +167,13 @@
 	 </br>
 	 <td> <a href="/home" class="btn btn-primary">Home</a>
 
+
+	 <form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+
+<input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the Terms and Conditions and Privacy Policy
+<input type="submit" name="submit" value="submit" />
+
+</form>
 	 <script>
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {
